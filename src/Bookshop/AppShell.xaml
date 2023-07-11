@@ -6,7 +6,7 @@
 	xmlns:views="clr-namespace:Bookshop.Views"
 	xmlns:local="clr-namespace:Bookshop">
 	<ShellContent
-		Shell.NavBarIsVisible="False"
+		Shell.NavBarIsVisible="True"
 		Title="Authors"
 		ContentTemplate="{DataTemplate views:AuthorsPage}"
 		Route="AuthorsPage" />

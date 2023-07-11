@@ -1,4 +1,6 @@
-﻿namespace Bookshop.ViewModels;
+﻿using MvvmHelpers;
+
+namespace Bookshop.ViewModels;
 
 public partial class AuthorsViewModel : BaseViewModel
 {
@@ -7,11 +9,12 @@ public partial class AuthorsViewModel : BaseViewModel
 	[ObservableProperty]
 	bool isRefreshing;
 
-	[ObservableProperty]
-	ObservableCollection<SampleItem> items;
+	public ObservableRangeCollection<SampleItem> Items { get; } = new ObservableRangeCollection<SampleItem>();
 
 	public AuthorsViewModel(SampleDataService service)
 	{
+		Title = "Authors";
+
 		dataService = service;
 	}
 
@@ -35,15 +38,14 @@ public partial class AuthorsViewModel : BaseViewModel
 	{
 		var items = await dataService.GetItems();
 
-		foreach (var item in items)
-		{
-			Items.Add(item);
-		}
+		Items.AddRange(items);
 	}
 
 	public async Task LoadDataAsync()
 	{
-		Items = new ObservableCollection<SampleItem>(await dataService.GetItems());
+		var items = await dataService.GetItems();
+
+		Items.ReplaceRange(items);
 	}
 
 	[RelayCommand]

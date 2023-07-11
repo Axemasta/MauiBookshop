@@ -3,7 +3,8 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:vm="clr-namespace:Bookshop.ViewModels"
 			 x:Class="Bookshop.Views.AuthorsDetailPage"
-			 x:DataType="vm:AuthorsDetailViewModel">
+			 x:DataType="vm:AuthorsDetailViewModel"
+			 Title="{Binding Title}">
 	<ScrollView>
 		<VerticalStackLayout Margin="12">
 			<Label Text="{Binding Item.Title}" FontSize="Header" />

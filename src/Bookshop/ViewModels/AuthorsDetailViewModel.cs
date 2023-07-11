@@ -4,5 +4,10 @@
 public partial class AuthorsDetailViewModel : BaseViewModel
 {
 	[ObservableProperty]
-	SampleItem item;
+	SampleItem? item;
+
+	public void OnNavigatedTo()
+	{
+		Title = Item?.Title;
+	}
 }

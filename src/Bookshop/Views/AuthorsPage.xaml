@@ -4,7 +4,8 @@
 			 xmlns:vm="clr-namespace:Bookshop.ViewModels"
 			 xmlns:m="clr-namespace:Bookshop.Models"
 			 x:Class="Bookshop.Views.AuthorsPage"
-			 x:DataType="vm:AuthorsViewModel">
+			 x:DataType="vm:AuthorsViewModel"
+			 Title="{Binding Title}">
 	<RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshingCommand}">
 		<CollectionView ItemsSource="{Binding Items}" RemainingItemsThreshold="10" RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
 			<CollectionView.ItemTemplate>
