@@ -1,6 +1,7 @@
 ﻿using Bookshop.DAL;
 using Bookshop.DAL.Abstractions;
 using Bookshop.DAL.Contexts;
+using Bookshop.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bookshop;
@@ -34,6 +35,10 @@ public static class MauiProgram
 		builder.Services.AddTransient<AuthorsViewModel>();
 		builder.Services.AddTransient<AuthorsPage>();
 
-		return builder.Build();
+		var app = builder.Build();
+
+		app.SeedDatabase();
+
+		return app;
 	}
 }

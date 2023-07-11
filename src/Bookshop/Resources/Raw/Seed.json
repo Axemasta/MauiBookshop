@@ -1,0 +1,79 @@
+[
+	{
+		"FirstName": "J.R.R",
+		"LastName": "Tolkien",
+		"ImageUrl": "https://images-na.ssl-images-amazon.com/images/S/amzn-author-media-prod/hq6oari96tk6tlqvhqs9qqcvi8.jpg",
+		"Books": [
+			{
+				"Title": "The Fellowship of the Ring",
+				"PublishDate": "1954-07-29",
+				"Price": 13.40,
+				"BookType": 0,
+				"ImageUrl": "https://m.media-amazon.com/images/I/71wsAHCLpIL.jpg"
+			},
+			{
+				"Title": "The Two Towers",
+				"PublishDate": "1954-11-11",
+				"Price": 13.40,
+				"BookType": 0,
+				"ImageUrl": "https://m.media-amazon.com/images/I/71t3wcy1XGL.jpg"
+			},
+			{
+				"Title": "The Return of the King",
+				"PublishDate": "1955-10-20",
+				"Price": 13.40,
+				"BookType": 0,
+				"ImageUrl": "https://m.media-amazon.com/images/I/716aH6aiRtL.jpg"
+			}
+		]
+	},
+	{
+		"FirstName": "Stephen",
+		"LastName": "King",
+		"ImageUrl": "https://stephenking.com/images/press/stephenking-sm.jpg",
+		"Books": [
+			{
+				"Title": "It",
+				"PublishDate": "1986-09-15",
+				"Price": 120.42,
+				"BookType": 0,
+				"ImageUrl": "https://m.media-amazon.com/images/I/4117PWF91KL.jpg"
+			},
+			{
+				"Title": "The Shining",
+				"PublishDate": "1977-01-28",
+				"Price": 25.12,
+				"BookType": 0,
+				"ImageUrl": "https://m.media-amazon.com/images/I/41NVuCl\u002BcZL.jpg"
+			}
+		]
+	},
+	{
+		"FirstName": "Hirohiko",
+		"LastName": "Araki",
+		"ImageUrl": "https://static.jojowiki.com/images/8/83/latest/20210825034225/Hirohiko_Araki.png",
+		"Books": [
+			{
+				"Title": "JoJo's Bizarre Adventure: Part 1 - Phantom Blood Volume 1",
+				"PublishDate": "2015-03-12",
+				"Price": 11.68,
+				"BookType": 1,
+				"ImageUrl": "https://m.media-amazon.com/images/I/511bO4zTWEL.jpg"
+			},
+			{
+				"Title": "JoJo's Bizarre Adventure: Part 1 - Phantom Blood Volume 2",
+				"PublishDate": "2015-05-21",
+				"Price": 11.67,
+				"BookType": 1,
+				"ImageUrl": "https://m.media-amazon.com/images/I/81PmixXuuQL.jpg"
+			},
+			{
+				"Title": "JoJo's Bizarre Adventure: Part 1 - Phantom Blood Volume 3",
+				"PublishDate": "2015-08-20",
+				"Price": 11.67,
+				"BookType": 1,
+				"ImageUrl": "https://m.media-amazon.com/images/I/514xTTpUnRL.jpg"
+			}
+		]
+	}
+]

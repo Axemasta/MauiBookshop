@@ -52,6 +52,16 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Bookshop.DAL\Bookshop.DAL.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Extensions\" />
+	  <None Remove="Resources\Raw\Seed.json" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Extensions\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Raw\Seed.json" />
+	</ItemGroup>
 	<PropertyGroup Label="MauiAppAccelerator">
 		<wizardVersion>v1.3.1</wizardVersion>
 		<projectType>MVVMToolkit</projectType>
