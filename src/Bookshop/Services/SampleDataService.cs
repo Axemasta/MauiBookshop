@@ -2,10 +2,8 @@
 
 public class SampleDataService
 {
-	public async Task<IEnumerable<SampleItem>> GetItems()
+	public Task<IEnumerable<SampleItem>> GetItems()
 	{
-		await Task.Delay(1000); // Artifical delay to give the impression of work
-
 		var random = new Random().Next();
 
 		var result = new List<SampleItem>();
@@ -19,6 +17,6 @@ public class SampleDataService
 			});
 		}
 
-		return result;
+		return Task.FromResult(result as IEnumerable<SampleItem>);
 	}
 }

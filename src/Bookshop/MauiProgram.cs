@@ -16,10 +16,8 @@ public static class MauiProgram
 		builder.Services.AddTransient<SampleDataService>();
 		builder.Services.AddTransient<AuthorsDetailViewModel>();
 		builder.Services.AddTransient<AuthorsDetailPage>();
-
-		builder.Services.AddSingleton<AuthorsViewModel>();
-
-		builder.Services.AddSingleton<AuthorsPage>();
+		builder.Services.AddTransient<AuthorsViewModel>();
+		builder.Services.AddTransient<AuthorsPage>();
 
 		return builder.Build();
 	}
