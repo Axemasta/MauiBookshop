@@ -21,11 +21,13 @@ public class BookshopDbContext : DbContext
 
 		foreach (var entityEntry in entries)
 		{
-			((BaseEntity)entityEntry.Entity).ModifiedDate = DateTime.Now;
-
 			if (entityEntry.State == EntityState.Added)
 			{
 				((BaseEntity)entityEntry.Entity).CreatedDate = DateTime.Now;
+			}
+			else
+			{
+				((BaseEntity)entityEntry.Entity).ModifiedDate = DateTime.Now;
 			}
 		}
 
