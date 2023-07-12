@@ -17,14 +17,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="Abstractions\" />
-    <None Remove="Providers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Abstractions\" />
-    <Folder Include="Providers\" />
-  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Bookshop.Domain\Bookshop.Domain.csproj" />
   </ItemGroup>

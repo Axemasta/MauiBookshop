@@ -32,7 +32,6 @@ public static class MauiProgram
 		builder.Services.AddSingleton<IAuthorService, AuthorService>();
 		builder.Services.AddScoped<IBookshopDbContext, BookshopDbContext>();
 
-		builder.Services.AddTransient<SampleDataService>();
 		builder.Services.AddTransient<AuthorsDetailViewModel>();
 		builder.Services.AddTransient<AuthorsDetailPage>();
 		builder.Services.AddTransient<AuthorsViewModel>();
