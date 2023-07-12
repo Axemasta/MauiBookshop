@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace Bookshop.Services;
 
 public class AuthorService : IAuthorService
@@ -11,7 +13,9 @@ public class AuthorService : IAuthorService
 
 	public List<Author> GetAuthors()
 	{
-		return bookshopDbContext.Authors.ToList();
+		return bookshopDbContext.Authors
+			.Include(a => a.Books)
+			.ToList();
 	}
 }
 

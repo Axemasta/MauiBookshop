@@ -1,18 +1,15 @@
 ﻿namespace Bookshop.Views;
 
-public partial class AuthorsDetailPage : ContentPage
+public partial class AuthorsDetailPage : BaseContentPage<AuthorsDetailViewModel>
 {
 	public AuthorsDetailPage(AuthorsDetailViewModel viewModel)
+		: base(viewModel)
 	{
 		InitializeComponent();
-		BindingContext = viewModel;
 	}
 
 	protected override void OnNavigatedTo(NavigatedToEventArgs args)
 	{
-		if (BindingContext is AuthorsDetailViewModel vm)
-		{
-			vm.OnNavigatedTo();
-		}
+		ViewModel.OnNavigatedTo();
 	}
 }

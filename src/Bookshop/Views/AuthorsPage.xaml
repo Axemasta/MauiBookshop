@@ -11,29 +11,9 @@
 			 x:DataType="vm:AuthorsViewModel"
 			 x:TypeArguments="vm:AuthorsViewModel"
 			 Title="{Binding Title}">
-	<ContentPage.Resources>
-		<ResourceDictionary>
-			<converters:AuthorInitialsConverter x:Key="InitialsConverter"/>
-
-			<Style x:Key="AvatarViewSizeBase" TargetType="mct:AvatarView">
-                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=Black, Dark=White}" />
-                <Setter Property="TextColor" Value="{AppThemeBinding Light=White, Dark=Black}" />
-                <Setter Property="BorderColor" Value="{AppThemeBinding Light=White, Dark=Black}" />
-                <Setter Property="Margin" Value="8" />
-            </Style>
-
-			<Style
-                x:Key="AvatarViewSizesLarge"
-                BasedOn="{StaticResource AvatarViewSizeBase}"
-                TargetType="mct:AvatarView">
-                <Setter Property="FontSize" Value="Large" />
-                <Setter Property="CornerRadius" Value="64" />
-                <Setter Property="FontAttributes" Value="Bold" />
-            </Style>
-		</ResourceDictionary>
-	</ContentPage.Resources>
 
 	<CollectionView
+		SelectionChanged="OnSelectionChanged"
 		ItemsSource="{Binding Authors}"
 		SelectionMode="Single"
 		SelectionChangedCommand="{Binding GoToAuthorCommand}"

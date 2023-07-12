@@ -25,6 +25,11 @@ public partial class AuthorsViewModel : BaseViewModel
 	[RelayCommand]
 	private async void GoToAuthor(Author author)
 	{
+		if (author is null)
+		{
+			return;
+		}
+
 		// Very testable 😘
 		await Shell.Current.GoToAsync(nameof(AuthorsDetailPage), true, new Dictionary<string, object>
 		{
