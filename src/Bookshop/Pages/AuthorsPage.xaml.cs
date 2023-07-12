@@ -1,4 +1,4 @@
-﻿namespace Bookshop.Views;
+﻿namespace Bookshop.Pages;
 
 public partial class AuthorsPage : BaseContentPage<AuthorsViewModel>
 {

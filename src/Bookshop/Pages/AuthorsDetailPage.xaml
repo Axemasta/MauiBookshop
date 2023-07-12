@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <base:BaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 xmlns:base="clr-namespace:Bookshop.Views.Base"
+			 xmlns:base="clr-namespace:Bookshop.Pages.Base"
 			 xmlns:vm="clr-namespace:Bookshop.ViewModels"
 			 xmlns:fa="clr-namespace:FontAwesome"
 			 xmlns:converters="clr-namespace:Bookshop.Converters"
 			 xmlns:entities="clr-namespace:Bookshop.DAL.Entities;assembly=Bookshop.DAL"
 			 xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-			 x:Class="Bookshop.Views.AuthorsDetailPage"
+			 x:Class="Bookshop.Pages.AuthorsDetailPage"
 			 x:DataType="vm:AuthorsDetailViewModel"
 			 x:TypeArguments="vm:AuthorsDetailViewModel"
 			 Title="{Binding Title}">
