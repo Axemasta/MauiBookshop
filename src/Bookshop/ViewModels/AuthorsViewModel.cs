@@ -4,56 +4,30 @@ namespace Bookshop.ViewModels;
 
 public partial class AuthorsViewModel : BaseViewModel
 {
-	readonly SampleDataService dataService;
+	private readonly IAuthorService authorService;
 
-	[ObservableProperty]
-	bool isRefreshing;
+	public ObservableRangeCollection<Author> Authors { get; } = new ObservableRangeCollection<Author>();
 
-	public ObservableRangeCollection<SampleItem> Items { get; } = new ObservableRangeCollection<SampleItem>();
-
-	public AuthorsViewModel(SampleDataService service)
+	public AuthorsViewModel(IAuthorService authorService)
 	{
+		this.authorService = authorService;
+
 		Title = "Authors";
+	}
 
-		dataService = service;
+	public void LoadDataAsync()
+	{
+		var authors = authorService.GetAuthors();
+
+		Authors.ReplaceRange(authors);
 	}
 
 	[RelayCommand]
-	private async void OnRefreshing()
-	{
-		IsRefreshing = true;
-
-		try
-		{
-			await LoadDataAsync();
-		}
-		finally
-		{
-			IsRefreshing = false;
-		}
-	}
-
-	[RelayCommand]
-	public async Task LoadMore()
-	{
-		var items = await dataService.GetItems();
-
-		Items.AddRange(items);
-	}
-
-	public async Task LoadDataAsync()
-	{
-		var items = await dataService.GetItems();
-
-		Items.ReplaceRange(items);
-	}
-
-	[RelayCommand]
-	private async void GoToDetails(SampleItem item)
+	private async void GoToDetails(Author author)
 	{
 		await Shell.Current.GoToAsync(nameof(AuthorsDetailPage), true, new Dictionary<string, object>
 		{
-			{ "Item", item }
+			{ "Author", author }
 		});
 	}
 }

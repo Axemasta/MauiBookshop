@@ -29,6 +29,9 @@ public static class MauiProgram
 			options.UseSqlite($"FileName={dbPath}");
 		});
 
+		builder.Services.AddSingleton<IAuthorService, AuthorService>();
+		builder.Services.AddScoped<IBookshopDbContext, BookshopDbContext>();
+
 		builder.Services.AddTransient<SampleDataService>();
 		builder.Services.AddTransient<AuthorsDetailViewModel>();
 		builder.Services.AddTransient<AuthorsDetailPage>();

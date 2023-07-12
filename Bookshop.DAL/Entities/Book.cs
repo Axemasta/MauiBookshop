@@ -8,15 +8,9 @@ public class Book : BaseEntity
 
 	public decimal Price { get; set; }
 
-	public Author Author { get; set; }
+	public required Author Author { get; set; }
 
 	public BookType BookType { get; set; }
 
 	public string? ImageUrl { get; set; }
-}
-
-public enum BookType
-{
-	Novel,
-	Manga,
 }

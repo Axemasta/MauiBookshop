@@ -51,8 +51,17 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Bookshop.DAL\Bookshop.DAL.csproj" />
+	  <ProjectReference Include="..\..\Bookshop.Domain\Bookshop.Domain.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Abstrations\" />
+	  <None Remove="Views\Base\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Abstrations\" />
+	  <Folder Include="Views\Base\" />
+	</ItemGroup>
 	<PropertyGroup Label="MauiAppAccelerator">
 		<wizardVersion>v1.3.1</wizardVersion>
 		<projectType>MVVMToolkit</projectType>

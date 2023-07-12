@@ -25,4 +25,7 @@
     <Folder Include="Abstractions\" />
     <Folder Include="Providers\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bookshop.Domain\Bookshop.Domain.csproj" />
+  </ItemGroup>
 </Project>
