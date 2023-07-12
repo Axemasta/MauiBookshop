@@ -6,7 +6,7 @@ namespace Bookshop.Extensions;
 
 public static class MauiAppExtensions
 {
-	public static void SeedDatabase(this MauiApp mauiApp)
+	public static async void SeedDatabase(this MauiApp mauiApp)
 	{
 		using (var scope = mauiApp.Services.CreateScope())
 		{
@@ -22,9 +22,7 @@ public static class MauiAppExtensions
 
 			Debug.WriteLine("Seeding Database");
 
-			var seedJson = GetResourceString("Seed.json");
-
-			var authors = JsonSerializer.Deserialize<List<Author>>(seedJson);
+			var authors = await GetResourceData<List<Author>>("Seed.json");
 
 			if (authors is null || authors.Count < 1)
 			{
@@ -36,24 +34,18 @@ public static class MauiAppExtensions
 		}
 	}
 
-	private static string GetResourceString(string resourceName)
+	private static async Task<T?> GetResourceData<T>(string resourceName)
 	{
-		var assembly = typeof(App).Assembly;
+		using var stream = await FileSystem.OpenAppPackageFileAsync(resourceName);
 
-		var resourceNames = assembly.GetManifestResourceNames();
-
-		var assemblyResourceName = resourceNames.FirstOrDefault(r => r.EndsWith(resourceName, StringComparison.InvariantCultureIgnoreCase));
-
-		if (assemblyResourceName is null)
+		if (stream is null)
 		{
-			throw new InvalidOperationException($"Resource not found: {resourceName}");
+			return default;
 		}
 
-		using (var stream = assembly.GetManifestResourceStream(assemblyResourceName))
-		using (var streamReader = new StreamReader(stream))
-		{
-			return streamReader.ReadToEnd();
-		}
+		using var streamReader = new StreamReader(stream);
+
+		return JsonSerializer.Deserialize<T>(stream);
 	}
 }
 
