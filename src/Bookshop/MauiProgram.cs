@@ -41,6 +41,8 @@ public static class MauiProgram
 		builder.Services.AddTransient<AuthorsDetailPage>();
 		builder.Services.AddTransient<AuthorsViewModel>();
 		builder.Services.AddTransient<AuthorsPage>();
+		builder.Services.AddTransient<BookDetailViewModel>();
+		builder.Services.AddTransient<BookDetailPage>();
 
 		var app = builder.Build();
 

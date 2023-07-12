@@ -71,6 +71,12 @@
 					<BindableLayout.ItemTemplate>
 						<DataTemplate x:DataType="entities:Book">
 							<Grid ColumnDefinitions="60, *, Auto" RowDefinitions="60" ColumnSpacing="10" RowSpacing="10">
+								<Grid.GestureRecognizers>
+									<TapGestureRecognizer
+										Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AuthorsDetailViewModel}}, Path=GoToBookCommand}"
+										CommandParameter="{Binding .}"/>
+								</Grid.GestureRecognizers>
+
 								<Border Grid.Column="0" StrokeShape="RoundRectangle 10" VerticalOptions="Center" HeightRequest="60">
 									<Image Source="{Binding ImageUrl}" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Orange"/>
 								</Border>
