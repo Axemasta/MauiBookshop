@@ -2,13 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:vm="clr-namespace:Bookshop.ViewModels"
+			 xmlns:fa="clr-namespace:FontAwesome"
 			 x:Class="Bookshop.Views.AuthorsDetailPage"
 			 x:DataType="vm:AuthorsDetailViewModel"
 			 Title="{Binding Title}">
+	<Shell.BackButtonBehavior>
+		<!-- This looks horrendous, but its what i get for using shell XD -->
+		<BackButtonBehavior>
+			<BackButtonBehavior.IconOverride>
+				<FontImageSource Size="20" Glyph="{x:Static fa:FontAwesomeIcons.ChevronLeft}" FontFamily="FASolid"/>
+			</BackButtonBehavior.IconOverride>
+		</BackButtonBehavior>
+	</Shell.BackButtonBehavior>
 	<ScrollView>
 		<VerticalStackLayout Margin="12">
-			<Label Text="{Binding Item.Title}" FontSize="Header" />
-			<Label Text="{Binding Item.Description}" FontSize="Default" />
+			<Label Text="{Binding Author.FirstName}" FontSize="Header" />
+			<Label Text="{Binding Author.LastName}" FontSize="Default" />
 		</VerticalStackLayout>
 	</ScrollView>
 </ContentPage>

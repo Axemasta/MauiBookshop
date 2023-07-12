@@ -2,6 +2,7 @@
 using Bookshop.DAL.Abstractions;
 using Bookshop.DAL.Contexts;
 using Bookshop.Extensions;
+using CommunityToolkit.Maui;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bookshop;
@@ -13,10 +14,14 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseMauiCommunityToolkit()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+				fonts.AddFont("FontAwesome6Free_Solid_900.otf", "FASolid");
+				fonts.AddFont("FontAwesome6Free_Regular_400.otf", "FARegular");
+				fonts.AddFont("FontAwesome6Brands_Regular_400.otf", "FABrands");
 			});
 
 		builder.Services.AddSingleton<IFileSystem>(FileSystem.Current);

@@ -23,8 +23,9 @@ public partial class AuthorsViewModel : BaseViewModel
 	}
 
 	[RelayCommand]
-	private async void GoToDetails(Author author)
+	private async void GoToAuthor(Author author)
 	{
+		// Very testable 😘
 		await Shell.Current.GoToAsync(nameof(AuthorsDetailPage), true, new Dictionary<string, object>
 		{
 			{ "Author", author }

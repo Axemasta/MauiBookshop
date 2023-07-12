@@ -1,13 +1,21 @@
 ﻿namespace Bookshop.ViewModels;
 
-[QueryProperty(nameof(Item), "Item")]
+[QueryProperty(nameof(Author), "Author")]
 public partial class AuthorsDetailViewModel : BaseViewModel
 {
 	[ObservableProperty]
-	SampleItem? item;
+	Author? author;
 
 	public void OnNavigatedTo()
 	{
-		Title = Item?.Title;
+		if (Author is null)
+		{
+			//
+			return;
+		}
+
+		var fullName = Author.FirstName + " " + Author.LastName;
+
+		Title = fullName;
 	}
 }
