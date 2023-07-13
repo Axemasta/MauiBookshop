@@ -11,10 +11,7 @@ public static class MauiAppExtensions
 		{
 			var dbContext = scope.ServiceProvider.GetRequiredService<BookshopDbContext>();
 
-			dbContext.Database.EnsureCreated();
-
-			var pendingMigrations = dbContext.Database.GetPendingMigrations()
-				.Any();
+			var pendingMigrations = MigrationsPending(dbContext);
 
 			dbContext.Database.Migrate();
 
@@ -35,6 +32,21 @@ public static class MauiAppExtensions
 
 			dbContext.Authors.AddRange(authors);
 			dbContext.SaveChanges();
+		}
+	}
+
+	private static bool MigrationsPending(BookshopDbContext bookshopDbContext)
+	{
+		// I'm not sure how this would work if the db didnt exist so for safety...
+
+		try
+		{
+			return bookshopDbContext.Database.GetPendingMigrations()
+				.Any();
+		}
+		catch
+		{
+			return false;
 		}
 	}
 

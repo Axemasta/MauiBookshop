@@ -82,7 +82,7 @@
 					Text="{Binding Book.PublishDate, StringFormat='Published Date: {0}'}"/>
 
 				<Label
-					Text="{Binding Book.Language, StringFormat='Language {0}'}"/>
+					Text="{Binding Book.Language, StringFormat='Language: {0}'}"/>
 
 				<Label
 					Text="{Binding Book.Publisher, StringFormat='Publisher: {0}'}"/>

@@ -67,6 +67,7 @@
 			<VerticalStackLayout Spacing="20">
 				<Label Text="{Binding Author.Books, Converter={StaticResource CountConverter}}" FontSize="Medium" FontAttributes="Bold"/>
 
+				<!-- TODO: Add TouchEffect to set background color when tapping -->
 				<StackLayout BindableLayout.ItemsSource="{Binding Author.Books}" Spacing="10">
 					<BindableLayout.ItemTemplate>
 						<DataTemplate x:DataType="entities:Book">
@@ -78,7 +79,7 @@
 								</Grid.GestureRecognizers>
 
 								<Border Grid.Column="0" StrokeShape="RoundRectangle 10" VerticalOptions="Center" HeightRequest="60">
-									<Image Source="{Binding ImageUrl}" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Orange"/>
+									<Image Source="{Binding ImageUrl}" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="LightGray"/>
 								</Border>
 
 								<Grid Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" RowDefinitions="*, *" ColumnDefinitions="*, *">
@@ -94,7 +95,7 @@
 									<HorizontalStackLayout Grid.Column="0" Grid.Row="1" Spacing="5" VerticalOptions="End">
 										<Image>
 											<Image.Source>
-												<FontImageSource Glyph="{x:Static fa:FontAwesomeIcons.Tag}" Size="Small" FontFamily="FASolid" Color="Black"/>
+												<FontImageSource Glyph="{x:Static fa:FontAwesomeIcons.Tag}" Size="Small" FontFamily="FASolid" Color="{AppThemeBinding Light=Black, Dark=White}"/>
 											</Image.Source>
 										</Image>
 										<Label
@@ -102,10 +103,10 @@
 											FontSize="Medium"/>
 									</HorizontalStackLayout>
 
-									<HorizontalStackLayout Grid.Column="1" Grid.Row="1" Spacing="5" VerticalOptions="End">
+									<HorizontalStackLayout Grid.Column="1" Grid.Row="1" Spacing="5" VerticalOptions="End" HorizontalOptions="End">
 										<Image>
 											<Image.Source>
-												<FontImageSource Glyph="{x:Static fa:FontAwesomeIcons.Calendar}" Size="Small" FontFamily="FASolid" Color="Black"/>
+												<FontImageSource Glyph="{x:Static fa:FontAwesomeIcons.Calendar}" Size="Small" FontFamily="FASolid" Color="{AppThemeBinding Light=Black, Dark=White}"/>
 											</Image.Source>
 										</Image>
 										<Label
@@ -116,7 +117,7 @@
 
 								<Image Grid.Column="2" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="0,0,20,0">
 									<Image.Source>
-										<FontImageSource Glyph="{x:Static fa:FontAwesomeIcons.ChevronRight}" Size="Small" FontFamily="FASolid" Color="Black"/>
+										<FontImageSource Glyph="{x:Static fa:FontAwesomeIcons.ChevronRight}" Size="Small" FontFamily="FASolid" Color="{AppThemeBinding Light=Black, Dark=White}"/>
 									</Image.Source>
 								</Image>
 							</Grid>
