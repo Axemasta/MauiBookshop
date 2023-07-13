@@ -3,10 +3,14 @@
 		"FirstName": "J.R.R",
 		"LastName": "Tolkien",
 		"ImageUrl": "https://images-na.ssl-images-amazon.com/images/S/amzn-author-media-prod/hq6oari96tk6tlqvhqs9qqcvi8.jpg",
+		"Description": "J.R.R. Tolkien was born on 3rd January 1892. After serving in the First World War, he became best known for The Hobbit and The Lord of the Rings, selling 150 million copies in more than 40 languages worldwide. Awarded the CBE and an honorary Doctorate of Letters from Oxford University, he died in 1973 at the age of 81.",
 		"Books": [
 			{
 				"Title": "The Fellowship of the Ring",
 				"PublishDate": "1954-07-29",
+				"Summary": "In a sleepy village in the Shire, a young hobbit is entrusted with an immense task. He must make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ruling Ring of Power - the only thing that prevents the Dark Lord Sauron\u2019s evil dominion.\r\n\r\nThus begins J. R. R. Tolkien\u2019s classic tale of adventure, which continues in The Two Towers and The Return of the King.",
+				"Publisher": "HarperCollins",
+				"Language": "English",
 				"Price": 13.40,
 				"BookType": 0,
 				"ImageUrl": "https://m.media-amazon.com/images/I/71wsAHCLpIL.jpg"
@@ -14,6 +18,9 @@
 			{
 				"Title": "The Two Towers",
 				"PublishDate": "1954-11-11",
+				"Summary": "The company of the Ring is torn asunder. Frodo and Sam continue their journey alone down the great River Anduin - alone, that is, save for the mysterious creeping figure that follows wherever they go.\r\n\r\nThis continues the classic tale begun in The Fellowship of the Ring, which reaches its awesome climax in The Return of the King.",
+				"Publisher": "HarperCollins",
+				"Language": "English",
 				"Price": 13.40,
 				"BookType": 0,
 				"ImageUrl": "https://m.media-amazon.com/images/I/71t3wcy1XGL.jpg"
@@ -21,6 +28,9 @@
 			{
 				"Title": "The Return of the King",
 				"PublishDate": "1955-10-20",
+				"Summary": "The armies of the Dark Lord are massing as his evil shadow spreads even wider. Men, Dwarves, Elves and Ents unite forces to battle against the Dark. Meanwhile, Frodo and Sam struggle further into Mordor in their heroic quest to destroy the One Ring.\r\n\r\nThe devastating conclusion of J.R.R. Tolkien\u2019s classic tale of adventure, begun in The Fellowship of the Ring and The Two Towers.",
+				"Publisher": "HarperCollins",
+				"Language": "English",
 				"Price": 13.40,
 				"BookType": 0,
 				"ImageUrl": "https://m.media-amazon.com/images/I/716aH6aiRtL.jpg"
@@ -31,10 +41,14 @@
 		"FirstName": "Stephen",
 		"LastName": "King",
 		"ImageUrl": "https://stephenking.com/images/press/stephenking-sm.jpg",
+		"Description": "Stephen King is the author of more than fifty books, all of them worldwide bestsellers. His first crime thriller featuring Bill Hodges, MR MERCEDES, won the Edgar Award for best novel and was shortlisted for the CWA Gold Dagger Award. Both MR MERCEDES and END OF WATCH received the Goodreads Choice Award for the Best Mystery and Thriller of 2014 and 2016 respectively. King co-wrote the bestselling novel Sleeping Beauties with his son Owen King, and many of King's books have been turned into celebrated films and television series including The Shawshank Redemption, Gerald's Game and It. King was the recipient of America's prestigious 2014 National Medal of Arts and the 2003 National Book Foundation Medal for distinguished contribution to American Letters. In 2007 he also won the Grand Master Award from the Mystery Writers of America. He lives with his wife Tabitha King in Maine.",
 		"Books": [
 			{
 				"Title": "It",
 				"PublishDate": "1986-09-15",
+				"Summary": "To the children, the town was their whole world. To the adults, knowing better, Derry, Maine, was just their hometown: familiar, well ordered for the most part. A good place to live. It was the children who saw - and felt - what made Derry so horribly different.\r\n\r\nIn the storm drains, in the sewers, IT lurked, taking on the shape of every nightmare, each one's deepest dread. Sometimes IT reached up, seizing, tearing, killing....\r\n\r\nThe adults, knowing better, knew nothing. Time passed, and the children grew up, moved away. The horror of IT was deep buried, wrapped in forgetfulness. Until they were called back, once more to confront IT as IT stirred and coiled in the sullen depths of their memories, reaching up again to make their past nightmares a terrible present reality.",
+				"Publisher": "Hodder & Stoughton",
+				"Language": "English",
 				"Price": 120.42,
 				"BookType": 0,
 				"ImageUrl": "https://m.media-amazon.com/images/I/4117PWF91KL.jpg"
@@ -42,6 +56,9 @@
 			{
 				"Title": "The Shining",
 				"PublishDate": "1977-01-28",
+				"Summary": "Danny is only five years old, but in the words of old Mr Hallorann he is a 'shiner', aglow with psychic voltage. When his father becomes caretaker of the Overlook Hotel, Danny's visions grow out of control. As winter closes in and blizzards cut them off, the hotel seems to develop a life of its own. It is meant to be empty. So who is the lady in Room 217, and who are the masked guests going up and down in the elevator? And why do the hedges shaped like animals seem so alive? Somewhere, somehow, there is an evil force in the hotel - and that, too, is beginning to shine….",
+				"Publisher": "Hodder & Stoughton",
+				"Language": "English",
 				"Price": 25.12,
 				"BookType": 0,
 				"ImageUrl": "https://m.media-amazon.com/images/I/41NVuCl\u002BcZL.jpg"
@@ -52,10 +69,14 @@
 		"FirstName": "Hirohiko",
 		"LastName": "Araki",
 		"ImageUrl": "https://static.jojowiki.com/images/8/83/latest/20210825034225/Hirohiko_Araki.png",
+		"Description": "Hirohiko Araki, real name Toshiyuki Araki is a Japanese manga artist and the author of JoJo's Bizarre Adventure. Born on June 7, 1960, he made his debut in 1980 with his one-shot Poker Under Arms, and began his professional career with the short series Cool Shock B.T., Baoh the Visitor, and Gorgeous Irene.\r\n\r\nHis work on JoJo's Bizarre Adventure is divided into several parts and continues to be serialized for over 30 years, totaling 131 volumes (as of September 2021), circulating over 120 million copies (January 2022). His style has been described as an \"experimental, but definitive approach.\" This content comes from JoJo's Bizarre Encyclopedia (https:\/\/jojowiki.com), and must be attributed to its authors if you are using it on another wiki or web page, as specified in the license.",
 		"Books": [
 			{
 				"Title": "JoJo's Bizarre Adventure: Part 1 - Phantom Blood Volume 1",
 				"PublishDate": "2015-03-12",
+				"Summary": "Young Jonathan Joestar's life is forever changed when he meets his new adopted brother, Dio. For some reason, Dio has a smoldering grudge against him and derives pleasure from seeing him suffer. But every man has his limits, as Dio finds out. This is the beginning of a long and hateful relationship! For older teen audiences.",
+				"Publisher": "Viz Media",
+				"Language": "Japanese",
 				"Price": 11.68,
 				"BookType": 1,
 				"ImageUrl": "https://m.media-amazon.com/images/I/511bO4zTWEL.jpg"
@@ -63,6 +84,9 @@
 			{
 				"Title": "JoJo's Bizarre Adventure: Part 1 - Phantom Blood Volume 2",
 				"PublishDate": "2015-05-21",
+				"Summary": "As if Dio wasn't diabolical enough, now he's an immortal vampire with incredible strength! But Jonathan Joestar's not one to back down, even when it seems like victory is impossible! It's a classic battle! Good versus evil! Grit and determination against power and arrogance! Who will win?! For older teen audiences.",
+				"Publisher": "Viz Media",
+				"Language": "Japanese",
 				"Price": 11.67,
 				"BookType": 1,
 				"ImageUrl": "https://m.media-amazon.com/images/I/81PmixXuuQL.jpg"
@@ -70,6 +94,9 @@
 			{
 				"Title": "JoJo's Bizarre Adventure: Part 1 - Phantom Blood Volume 3",
 				"PublishDate": "2015-08-20",
+				"Summary": "The conclusion of the Phantom Blood Arc! Jonathan Joestar and his mentor Zeppelli continue their pursuit of the villainous vampire, Dio! But to get to him, they must first face down his murderous henchmen! In battle after bloody battle, JoJo and Zeppelli are pushed to their limits and beyond! For older teen audiences.",
+				"Publisher": "Viz Media",
+				"Language": "Japanese",
 				"Price": 11.67,
 				"BookType": 1,
 				"ImageUrl": "https://m.media-amazon.com/images/I/514xTTpUnRL.jpg"
