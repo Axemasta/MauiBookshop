@@ -11,9 +11,14 @@ public static class MauiAppExtensions
 		{
 			var dbContext = scope.ServiceProvider.GetRequiredService<BookshopDbContext>();
 
+			dbContext.Database.EnsureCreated();
+
+			var pendingMigrations = dbContext.Database.GetPendingMigrations()
+				.Any();
+
 			dbContext.Database.Migrate();
 
-			if (dbContext.Authors.Any() || dbContext.Books.Any())
+			if ((dbContext.Authors.Any() || dbContext.Books.Any()) && !pendingMigrations)
 			{
 				Debug.WriteLine("Database already seeded");
 				return;

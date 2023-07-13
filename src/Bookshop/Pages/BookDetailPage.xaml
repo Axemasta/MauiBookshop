@@ -69,7 +69,7 @@
 					Text="Summary"
 					FontSize="Medium"/>
 
-				<Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis libero magna, ut aliquam purus pretium sed. Curabitur mi turpis, aliquam ac nunc non, laoreet cursus nibh. Nulla euismod iaculis ante, sit amet maximus diam lobortis ut. Praesent accumsan ligula quis gravida varius. Mauris accumsan nisl in mi feugiat, at efficitur felis mattis. "/>
+				<Label Text="{Binding Book.Summary}"/>
 
 			</VerticalStackLayout>
 
@@ -82,10 +82,10 @@
 					Text="{Binding Book.PublishDate, StringFormat='Published Date: {0}'}"/>
 
 				<Label
-					Text="{Binding Book.PublishDate, StringFormat='Language {0}'}"/>
+					Text="{Binding Book.Language, StringFormat='Language {0}'}"/>
 
 				<Label
-					Text="{Binding Book.PublishDate, StringFormat='Publisher: {0}'}"/>
+					Text="{Binding Book.Publisher, StringFormat='Publisher: {0}'}"/>
 
 			</VerticalStackLayout>
 		</VerticalStackLayout>

@@ -3,6 +3,7 @@ using System;
 using Bookshop.DAL.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bookshop.DAL.Migrations;
 
 [DbContext(typeof(BookshopDbContext))]
-partial class BookshopDbContextModelSnapshot : ModelSnapshot
+[Migration("20230713151653_ExtraInformation")]
+partial class ExtraInformation
 {
-    protected override void BuildModel(ModelBuilder modelBuilder)
+    /// <inheritdoc />
+    protected override void BuildTargetModel(ModelBuilder modelBuilder)
     {
 #pragma warning disable 612, 618
         modelBuilder.HasAnnotation("ProductVersion", "7.0.9");
@@ -24,6 +27,9 @@ partial class BookshopDbContextModelSnapshot : ModelSnapshot
                     .HasColumnType("INTEGER");
 
                 b.Property<DateTime>("CreatedDate")
+                    .HasColumnType("TEXT");
+
+                b.Property<string>("Description")
                     .HasColumnType("TEXT");
 
                 b.Property<string>("FirstName")
@@ -63,6 +69,9 @@ partial class BookshopDbContextModelSnapshot : ModelSnapshot
                 b.Property<string>("ImageUrl")
                     .HasColumnType("TEXT");
 
+                b.Property<string>("Language")
+                    .HasColumnType("TEXT");
+
                 b.Property<DateTime?>("ModifiedDate")
                     .HasColumnType("TEXT");
 
@@ -70,6 +79,12 @@ partial class BookshopDbContextModelSnapshot : ModelSnapshot
                     .HasColumnType("TEXT");
 
                 b.Property<DateOnly>("PublishDate")
+                    .HasColumnType("TEXT");
+
+                b.Property<string>("Publisher")
+                    .HasColumnType("TEXT");
+
+                b.Property<string>("Summary")
                     .HasColumnType("TEXT");
 
                 b.Property<string>("Title")

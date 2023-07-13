@@ -60,7 +60,7 @@
 					</Label.FormattedText>
 				</Label>
 
-				<Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis libero magna, ut aliquam purus pretium sed. Curabitur mi turpis, aliquam ac nunc non, laoreet cursus nibh. Nulla euismod iaculis ante, sit amet maximus diam lobortis ut. Praesent accumsan ligula quis gravida varius. Mauris accumsan nisl in mi feugiat, at efficitur felis mattis. "/>
+				<Label Text="{Binding Author.Description}"/>
 			</VerticalStackLayout>
 
 
