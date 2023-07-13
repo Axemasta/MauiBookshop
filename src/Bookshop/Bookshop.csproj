@@ -61,10 +61,20 @@
 	  <None Remove="Resources\Fonts\FontAwesome6Free_Regular_400.otf" />
 	  <None Remove="Resources\Fonts\FontAwesome6Free_Solid_900.otf" />
 	  <None Remove="Utils\" />
+	  <None Remove="Platforms\MacCatalyst\Behaviors\" />
+	  <None Remove="Platforms\iOS\Behaviors\" />
+	  <None Remove="Behaviors\" />
+	  <None Remove="Platforms\Windows\Behaviors\" />
+	  <None Remove="Platforms\Android\Behaviors\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Converters\" />
 	  <Folder Include="Utils\" />
+	  <Folder Include="Platforms\MacCatalyst\Behaviors\" />
+	  <Folder Include="Platforms\iOS\Behaviors\" />
+	  <Folder Include="Behaviors\" />
+	  <Folder Include="Platforms\Windows\Behaviors\" />
+	  <Folder Include="Platforms\Android\Behaviors\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Fonts\FontAwesome6Brands_Regular_400.otf" />

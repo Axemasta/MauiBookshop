@@ -2,16 +2,92 @@
 <base:BaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:base="clr-namespace:Bookshop.Pages.Base"
-             xmlns:vm="clr-namespace:Bookshop.ViewModels"
+			 xmlns:behaviors="clr-namespace:Bookshop.Behaviors"
+			 xmlns:vm="clr-namespace:Bookshop.ViewModels"
+			 xmlns:fa="clr-namespace:FontAwesome"
+			 xmlns:converters="clr-namespace:Bookshop.Converters"
+			 xmlns:entities="clr-namespace:Bookshop.DAL.Entities;assembly=Bookshop.DAL"
+			 xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Bookshop.Pages.BookDetailPage"
              x:DataType="vm:BookDetailViewModel"
 			 x:TypeArguments="vm:BookDetailViewModel"
 			 Title="{Binding Title}">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
-</base:BaseContentPage>
+    <Shell.BackButtonBehavior>
+		<!-- This looks horrendous, but its what i get for using shell XD -->
+		<BackButtonBehavior>
+			<BackButtonBehavior.IconOverride>
+				<FontImageSource Size="20" Glyph="{x:Static fa:FontAwesomeIcons.ChevronLeft}" FontFamily="FASolid"/>
+			</BackButtonBehavior.IconOverride>
+		</BackButtonBehavior>
+	</Shell.BackButtonBehavior>
 
+    <ScrollView>
+		<VerticalStackLayout Padding="20" Spacing="40">
+			<VerticalStackLayout HorizontalOptions="Center" Spacing="20">
+				<!-- Maui rendering issue on iOS, it is not clipping corner raidus -->
+				<Border WidthRequest="250" HeightRequest="250" BackgroundColor="LightGray" Padding="0">
+					<Border.StrokeShape>
+						<RoundRectangle CornerRadius="20"/>
+					</Border.StrokeShape>
+					
+					<Grid>
+						<Image Source="{Binding Book.ImageUrl}" Aspect="AspectFill">
+							<Image.Behaviors>
+								<behaviors:BlurBehavior Radius="50"/>
+							</Image.Behaviors>
+						</Image>
+						<Image Source="{Binding Book.ImageUrl}" Aspect="AspectFit"/>
+					</Grid>
+				</Border>
+
+				<Label
+					Text="{Binding Book.Title}"
+					HorizontalTextAlignment="Center"
+					FontSize="Subtitle"
+					FontAttributes="Bold"/>
+
+				<Label
+					VerticalTextAlignment="Start"
+					HorizontalTextAlignment="Center"
+					FontSize="Medium">
+					<Label.FormattedText>
+						<FormattedString>
+							<Span Text="By "/>
+							<Span Text="{Binding Book.Author.FirstName}"/>
+							<Span Text=" "/>
+							<Span Text="{Binding Book.Author.LastName}"/>
+						</FormattedString>
+					</Label.FormattedText>
+				</Label>
+
+			</VerticalStackLayout>
+
+			<Button Text="{Binding Book.Price, StringFormat='Buy: £{0}'}" HeightRequest="40" CornerRadius="20" WidthRequest="250"/>
+
+			<VerticalStackLayout Spacing="10">
+				<Label
+					Text="Summary"
+					FontSize="Medium"/>
+
+				<Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis libero magna, ut aliquam purus pretium sed. Curabitur mi turpis, aliquam ac nunc non, laoreet cursus nibh. Nulla euismod iaculis ante, sit amet maximus diam lobortis ut. Praesent accumsan ligula quis gravida varius. Mauris accumsan nisl in mi feugiat, at efficitur felis mattis. "/>
+
+			</VerticalStackLayout>
+
+			<VerticalStackLayout Spacing="10">
+				<Label
+					Text="Product details"
+					FontSize="Medium" FontAttributes="Bold"/>
+
+				<Label
+					Text="{Binding Book.PublishDate, StringFormat='Published Date: {0}'}"/>
+
+				<Label
+					Text="{Binding Book.PublishDate, StringFormat='Language {0}'}"/>
+
+				<Label
+					Text="{Binding Book.PublishDate, StringFormat='Publisher: {0}'}"/>
+
+			</VerticalStackLayout>
+		</VerticalStackLayout>
+	</ScrollView>
+</base:BaseContentPage>
