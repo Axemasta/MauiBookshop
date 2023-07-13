@@ -1,6 +1,5 @@
 using Bookshop.DAL.Contexts;
-using Bookshop.DAL.Entities;
-using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bookshop.Extensions;
 
@@ -12,7 +11,7 @@ public static class MauiAppExtensions
 		{
 			var dbContext = scope.ServiceProvider.GetRequiredService<BookshopDbContext>();
 
-			dbContext.Database.EnsureCreated();
+			dbContext.Database.Migrate();
 
 			if (dbContext.Authors.Any() || dbContext.Books.Any())
 			{
