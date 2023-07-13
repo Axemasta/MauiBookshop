@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <UseMaui>true</UseMaui>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,4 +20,5 @@
   <ItemGroup>
     <ProjectReference Include="..\Bookshop.Domain\Bookshop.Domain.csproj" />
   </ItemGroup>
+
 </Project>
