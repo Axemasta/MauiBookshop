@@ -2,13 +2,12 @@
 <Shell
 	x:Class="Bookshop.AppShell"
 	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:pages="clr-namespace:Bookshop.Pages"
-	xmlns:local="clr-namespace:Bookshop">
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 	<ShellContent
-		Shell.NavBarIsVisible="True"
-		Title="Authors"
 		ContentTemplate="{DataTemplate pages:AuthorsPage}"
-		Route="AuthorsPage" />
+		Route="AuthorsPage"
+		Shell.NavBarIsVisible="True"
+		Title="Authors" />
 
 </Shell>

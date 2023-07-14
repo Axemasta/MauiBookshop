@@ -1,6 +1,4 @@
-using Bookshop.DAL.Entities;
-
-namespace Bookshop.Abstrations;
+namespace Bookshop.Abstractions;
 
 public interface IAuthorService
 {

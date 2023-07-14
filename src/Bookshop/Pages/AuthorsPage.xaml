@@ -1,55 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<base:BaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 xmlns:base="clr-namespace:Bookshop.Pages.Base"
-			 xmlns:converters="clr-namespace:Bookshop.Converters"
-			 xmlns:fa="clr-namespace:FontAwesome"
-			 xmlns:vm="clr-namespace:Bookshop.ViewModels"
-			 xmlns:entities="clr-namespace:Bookshop.DAL.Entities;assembly=Bookshop.DAL"
-			 xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-			 x:Class="Bookshop.Pages.AuthorsPage"
-			 x:DataType="vm:AuthorsViewModel"
-			 x:TypeArguments="vm:AuthorsViewModel"
-			 Title="{Binding Title}">
+<base:BaseContentPage
+	Title="{Binding Title}"
+	x:Class="Bookshop.Pages.AuthorsPage"
+	x:DataType="vm:AuthorsViewModel"
+	x:TypeArguments="vm:AuthorsViewModel"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:base="clr-namespace:Bookshop.Pages.Base"
+	xmlns:entities="clr-namespace:Bookshop.DAL.Entities;assembly=Bookshop.DAL"
+	xmlns:fa="clr-namespace:FontAwesome"
+	xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+	xmlns:vm="clr-namespace:Bookshop.ViewModels"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
 	<CollectionView
-		SelectionChanged="OnSelectionChanged"
 		ItemsSource="{Binding Authors}"
-		SelectionMode="Single"
+		SelectionChanged="OnSelectionChanged"
 		SelectionChangedCommand="{Binding GoToAuthorCommand}"
-		SelectionChangedCommandParameter="{Binding SelectedItem, Source={RelativeSource Self}}">
+		SelectionChangedCommandParameter="{Binding SelectedItem, Source={RelativeSource Self}}"
+		SelectionMode="Single">
 		<CollectionView.ItemTemplate>
 			<DataTemplate x:DataType="entities:Author">
 				<Grid RowDefinitions="*, 1">
 
-					<Grid ColumnDefinitions="Auto, *, Auto" Padding="20, 0" ColumnSpacing="20">
+					<Grid
+						ColumnDefinitions="Auto, *, Auto"
+						ColumnSpacing="20"
+						Padding="20,0">
 						<mct:AvatarView
-							Text="{Binding ., Converter={StaticResource InitialsConverter}}"
-							ImageSource="{Binding ImageUrl}"
 							Grid.Column="0"
+							HeightRequest="64"
+							ImageSource="{Binding ImageUrl}"
 							Style="{StaticResource AvatarViewSizesLarge}"
-							WidthRequest="64"
-							HeightRequest="64"/>
+							Text="{Binding ., Converter={StaticResource InitialsConverter}}"
+							WidthRequest="64" />
 
 
-						<Label Grid.Column="1" VerticalTextAlignment="Center" FontSize="Medium">
+						<Label
+							FontSize="Medium"
+							Grid.Column="1"
+							VerticalTextAlignment="Center">
 							<Label.FormattedText>
 								<FormattedString>
-									<Span Text="{Binding FirstName}"/>
-									<Span Text=" "/>
-									<Span Text="{Binding LastName}"/>
+									<Span Text="{Binding FirstName}" />
+									<Span Text=" " />
+									<Span Text="{Binding LastName}" />
 								</FormattedString>
 							</Label.FormattedText>
 						</Label>
 
-						<Image Grid.Column="2" VerticalOptions="Fill" HorizontalOptions="Fill">
+						<Image
+							Grid.Column="2"
+							HorizontalOptions="Fill"
+							VerticalOptions="Fill">
 							<Image.Source>
-								<FontImageSource Glyph="{x:Static fa:FontAwesomeIcons.ChevronRight}" Size="Small" FontFamily="FASolid" Color="Black"/>
+								<FontImageSource
+									Color="{AppThemeBinding Light=Black,
+									                        Dark=White}"
+									FontFamily="FASolid"
+									Glyph="{x:Static fa:FontAwesomeIcons.ChevronRight}"
+									Size="Small" />
 							</Image.Source>
 						</Image>
 					</Grid>
 
-					<BoxView Color="LightGray" Grid.Row="1"/>
+					<BoxView Color="LightGray" Grid.Row="1" />
 				</Grid>
 			</DataTemplate>
 		</CollectionView.ItemTemplate>

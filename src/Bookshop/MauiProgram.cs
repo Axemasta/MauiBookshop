@@ -1,4 +1,5 @@
-﻿using Bookshop.DAL;
+﻿using Bookshop.Abstractions;
+using Bookshop.DAL;
 using Bookshop.DAL.Abstractions;
 using Bookshop.DAL.Contexts;
 using Bookshop.Extensions;

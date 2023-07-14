@@ -1,3 +1,4 @@
+using Bookshop.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bookshop.Services;

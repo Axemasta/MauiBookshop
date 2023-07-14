@@ -8,9 +8,6 @@ global using System.Globalization;
 global using System.Runtime.CompilerServices;
 global using System.Text.Json;
 global using System.Threading.Tasks;
-
-global using Bookshop.Abstrations;
-global using Bookshop.Models;
 global using Bookshop.Services;
 global using Bookshop.ViewModels;
 global using Bookshop.Pages;

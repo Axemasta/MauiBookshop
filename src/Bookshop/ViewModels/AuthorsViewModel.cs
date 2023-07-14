@@ -1,4 +1,5 @@
-﻿using MvvmHelpers;
+﻿using Bookshop.Abstractions;
+using MvvmHelpers;
 
 namespace Bookshop.ViewModels;
 
@@ -23,7 +24,7 @@ public partial class AuthorsViewModel : BaseViewModel
 	}
 
 	[RelayCommand]
-	private async void GoToAuthor(Author author)
+	private async void GoToAuthor(Author? author)
 	{
 		if (author is null)
 		{

@@ -13,7 +13,7 @@ public partial class AuthorsPage : BaseContentPage<AuthorsViewModel>
 		ViewModel.LoadDataAsync();
 	}
 
-	void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+	private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 	{
 		if (sender is CollectionView cv)
 		{

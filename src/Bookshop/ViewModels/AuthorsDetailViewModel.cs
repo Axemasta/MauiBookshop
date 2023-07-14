@@ -10,7 +10,6 @@ public partial class AuthorsDetailViewModel : BaseViewModel
 	{
 		if (Author is null)
 		{
-			//
 			return;
 		}
 

@@ -1,28 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<base:BaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 xmlns:base="clr-namespace:Bookshop.Pages.Base"
-			 xmlns:vm="clr-namespace:Bookshop.ViewModels"
-			 xmlns:fa="clr-namespace:FontAwesome"
-			 xmlns:converters="clr-namespace:Bookshop.Converters"
-			 xmlns:entities="clr-namespace:Bookshop.DAL.Entities;assembly=Bookshop.DAL"
-			 xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-			 x:Class="Bookshop.Pages.AuthorsDetailPage"
-			 x:DataType="vm:AuthorsDetailViewModel"
-			 x:TypeArguments="vm:AuthorsDetailViewModel"
-			 Title="{Binding Title}">
+<base:BaseContentPage
+	Title="{Binding Title}"
+	x:Class="Bookshop.Pages.AuthorsDetailPage"
+	x:DataType="vm:AuthorsDetailViewModel"
+	x:TypeArguments="vm:AuthorsDetailViewModel"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:base="clr-namespace:Bookshop.Pages.Base"
+	xmlns:converters="clr-namespace:Bookshop.Converters"
+	xmlns:entities="clr-namespace:Bookshop.DAL.Entities;assembly=Bookshop.DAL"
+	xmlns:fa="clr-namespace:FontAwesome"
+	xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+	xmlns:vm="clr-namespace:Bookshop.ViewModels"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 	<Shell.BackButtonBehavior>
-		<!-- This looks horrendous, but its what i get for using shell XD -->
+		<!--  This looks horrendous, but its what i get for using shell XD  -->
 		<BackButtonBehavior>
 			<BackButtonBehavior.IconOverride>
-				<FontImageSource Size="20" Glyph="{x:Static fa:FontAwesomeIcons.ChevronLeft}" FontFamily="FASolid"/>
+				<FontImageSource
+					FontFamily="FASolid"
+					Glyph="{x:Static fa:FontAwesomeIcons.ChevronLeft}"
+					Size="20" />
 			</BackButtonBehavior.IconOverride>
 		</BackButtonBehavior>
 	</Shell.BackButtonBehavior>
 
 	<ContentPage.Resources>
 		<ResourceDictionary>
-			<converters:CountConverter x:Key="CountConverter" TextTemplate="{}{0} Titles"/>
+			<converters:CountConverter TextTemplate="{}{0} Titles" x:Key="CountConverter" />
 		</ResourceDictionary>
 
 	</ContentPage.Resources>
@@ -31,93 +35,139 @@
 		<VerticalStackLayout Padding="20" Spacing="40">
 			<VerticalStackLayout>
 				<mct:AvatarView
-				Text="{Binding Author, Converter={StaticResource InitialsConverter}}"
-				ImageSource="{Binding Author.ImageUrl}"
-				Style="{StaticResource AvatarViewSizesLarge}"
-				WidthRequest="128"
-				HeightRequest="128"/>
+					HeightRequest="128"
+					ImageSource="{Binding Author.ImageUrl}"
+					Style="{StaticResource AvatarViewSizesLarge}"
+					Text="{Binding Author, Converter={StaticResource InitialsConverter}}"
+					WidthRequest="128" />
 
-				<Label FontSize="Subtitle" FontAttributes="Bold" HorizontalOptions="Center">
+				<Label
+					FontAttributes="Bold"
+					FontSize="Subtitle"
+					HorizontalOptions="Center">
 					<Label.FormattedText>
 						<FormattedString>
-							<Span Text="{Binding Author.FirstName}"/>
-							<Span Text=" "/>
-							<Span Text="{Binding Author.LastName}"/>
+							<Span Text="{Binding Author.FirstName}" />
+							<Span Text=" " />
+							<Span Text="{Binding Author.LastName}" />
 						</FormattedString>
 					</Label.FormattedText>
 				</Label>
 			</VerticalStackLayout>
 
 			<VerticalStackLayout>
-				<Label FontSize="Medium" FontAttributes="Bold">
+				<Label FontAttributes="Bold" FontSize="Medium">
 					<Label.FormattedText>
 						<FormattedString>
-							<Span Text="About "/>
-							<Span Text="{Binding Author.FirstName}"/>
-							<Span Text=" "/>
-							<Span Text="{Binding Author.LastName}"/>
+							<Span Text="About " />
+							<Span Text="{Binding Author.FirstName}" />
+							<Span Text=" " />
+							<Span Text="{Binding Author.LastName}" />
 						</FormattedString>
 					</Label.FormattedText>
 				</Label>
 
-				<Label Text="{Binding Author.Description}"/>
+				<Label Text="{Binding Author.Description}" />
 			</VerticalStackLayout>
 
 
 			<VerticalStackLayout Spacing="20">
-				<Label Text="{Binding Author.Books, Converter={StaticResource CountConverter}}" FontSize="Medium" FontAttributes="Bold"/>
+				<Label
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="{Binding Author.Books, Converter={StaticResource CountConverter}}" />
 
-				<!-- TODO: Add TouchEffect to set background color when tapping -->
+				<!--  TODO: Add TouchEffect to set background color when tapping  -->
 				<StackLayout BindableLayout.ItemsSource="{Binding Author.Books}" Spacing="10">
 					<BindableLayout.ItemTemplate>
 						<DataTemplate x:DataType="entities:Book">
-							<Grid ColumnDefinitions="60, *, Auto" RowDefinitions="60" ColumnSpacing="10" RowSpacing="10">
+							<Grid
+								ColumnDefinitions="60, *, Auto"
+								ColumnSpacing="10"
+								RowDefinitions="60"
+								RowSpacing="10">
 								<Grid.GestureRecognizers>
-									<TapGestureRecognizer
-										Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AuthorsDetailViewModel}}, Path=GoToBookCommand}"
-										CommandParameter="{Binding .}"/>
+									<TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AuthorsDetailViewModel}}, Path=GoToBookCommand}" CommandParameter="{Binding .}" />
 								</Grid.GestureRecognizers>
 
-								<Border Grid.Column="0" StrokeShape="RoundRectangle 10" VerticalOptions="Center" HeightRequest="60">
-									<Image Source="{Binding ImageUrl}" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="LightGray"/>
+								<Border
+									Grid.Column="0"
+									HeightRequest="60"
+									StrokeShape="RoundRectangle 10"
+									VerticalOptions="Center">
+									<Image
+										Aspect="AspectFill"
+										BackgroundColor="LightGray"
+										HorizontalOptions="Fill"
+										Source="{Binding ImageUrl}"
+										VerticalOptions="Fill" />
 								</Border>
 
-								<Grid Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" RowDefinitions="*, *" ColumnDefinitions="*, *">
+								<Grid
+									ColumnDefinitions="*, *"
+									Grid.Column="1"
+									HorizontalOptions="Fill"
+									RowDefinitions="*, *"
+									VerticalOptions="Fill">
 									<Label
-										Text="{Binding Title}"
+										FontAttributes="Bold"
+										FontSize="Medium"
 										Grid.Column="0"
 										Grid.ColumnSpan="2"
 										Grid.Row="0"
-										VerticalTextAlignment="Start"
-										FontSize="Medium"
-										FontAttributes="Bold"/>
+										Text="{Binding Title}"
+										VerticalTextAlignment="Start" />
 
-									<HorizontalStackLayout Grid.Column="0" Grid.Row="1" Spacing="5" VerticalOptions="End">
+									<HorizontalStackLayout
+										Grid.Column="0"
+										Grid.Row="1"
+										Spacing="5"
+										VerticalOptions="End">
 										<Image>
 											<Image.Source>
-												<FontImageSource Glyph="{x:Static fa:FontAwesomeIcons.Tag}" Size="Small" FontFamily="FASolid" Color="{AppThemeBinding Light=Black, Dark=White}"/>
+												<FontImageSource
+													Color="{AppThemeBinding Light=Black,
+													                        Dark=White}"
+													FontFamily="FASolid"
+													Glyph="{x:Static fa:FontAwesomeIcons.Tag}"
+													Size="Small" />
 											</Image.Source>
 										</Image>
-										<Label
-											Text="{Binding Price}"
-											FontSize="Medium"/>
+										<Label FontSize="Medium" Text="{Binding Price}" />
 									</HorizontalStackLayout>
 
-									<HorizontalStackLayout Grid.Column="1" Grid.Row="1" Spacing="5" VerticalOptions="End" HorizontalOptions="End">
+									<HorizontalStackLayout
+										Grid.Column="1"
+										Grid.Row="1"
+										HorizontalOptions="End"
+										Spacing="5"
+										VerticalOptions="End">
 										<Image>
 											<Image.Source>
-												<FontImageSource Glyph="{x:Static fa:FontAwesomeIcons.Calendar}" Size="Small" FontFamily="FASolid" Color="{AppThemeBinding Light=Black, Dark=White}"/>
+												<FontImageSource
+													Color="{AppThemeBinding Light=Black,
+													                        Dark=White}"
+													FontFamily="FASolid"
+													Glyph="{x:Static fa:FontAwesomeIcons.Calendar}"
+													Size="Small" />
 											</Image.Source>
 										</Image>
-										<Label
-											Text="{Binding PublishDate}"
-											FontSize="Medium"/>
+										<Label FontSize="Medium" Text="{Binding PublishDate}" />
 									</HorizontalStackLayout>
 								</Grid>
 
-								<Image Grid.Column="2" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="0,0,20,0">
+								<Image
+									Grid.Column="2"
+									HorizontalOptions="Fill"
+									Margin="0,0,20,0"
+									VerticalOptions="Fill">
 									<Image.Source>
-										<FontImageSource Glyph="{x:Static fa:FontAwesomeIcons.ChevronRight}" Size="Small" FontFamily="FASolid" Color="{AppThemeBinding Light=Black, Dark=White}"/>
+										<FontImageSource
+											Color="{AppThemeBinding Light=Black,
+											                        Dark=White}"
+											FontFamily="FASolid"
+											Glyph="{x:Static fa:FontAwesomeIcons.ChevronRight}"
+											Size="Small" />
 									</Image.Source>
 								</Image>
 							</Grid>

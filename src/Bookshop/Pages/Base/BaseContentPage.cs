@@ -3,11 +3,11 @@ namespace Bookshop.Pages.Base;
 public class BaseContentPage<TViewModel> : ContentPage
 	where TViewModel : BaseViewModel
 {
-	protected TViewModel ViewModel { get; init; }
+	protected TViewModel ViewModel { get; }
 
-	public BaseContentPage(TViewModel viewmMdel)
+	protected BaseContentPage(TViewModel viewModel)
 	{
-		this.ViewModel = viewmMdel;
-		this.BindingContext = viewmMdel;
+		this.ViewModel = viewModel;
+		this.BindingContext = viewModel;
 	}
 }

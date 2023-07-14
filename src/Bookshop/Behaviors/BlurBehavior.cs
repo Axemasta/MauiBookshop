@@ -12,7 +12,7 @@ public partial class BlurBehavior
 		set => SetValue(RadiusProperty, value);
 	}
 
-	static void OnRadiusChanged(BindableObject bindable, object oldValue, object newValue)
+	private static void OnRadiusChanged(BindableObject bindable, object oldValue, object newValue)
 	{
 		var behavior = (BlurBehavior)bindable;
 		if (behavior.imageView is null)

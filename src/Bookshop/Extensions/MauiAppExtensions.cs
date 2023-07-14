@@ -7,32 +7,31 @@ public static class MauiAppExtensions
 {
 	public static async void SeedDatabase(this MauiApp mauiApp)
 	{
-		using (var scope = mauiApp.Services.CreateScope())
+		using var scope = mauiApp.Services.CreateScope();
+
+		var dbContext = scope.ServiceProvider.GetRequiredService<BookshopDbContext>();
+
+		var pendingMigrations = MigrationsPending(dbContext);
+
+		dbContext.Database.Migrate();
+
+		if ((dbContext.Authors.Any() || dbContext.Books.Any()) && !pendingMigrations)
 		{
-			var dbContext = scope.ServiceProvider.GetRequiredService<BookshopDbContext>();
-
-			var pendingMigrations = MigrationsPending(dbContext);
-
-			dbContext.Database.Migrate();
-
-			if ((dbContext.Authors.Any() || dbContext.Books.Any()) && !pendingMigrations)
-			{
-				Debug.WriteLine("Database already seeded");
-				return;
-			}
-
-			Debug.WriteLine("Seeding Database");
-
-			var authors = await GetResourceData<List<Author>>("Seed.json");
-
-			if (authors is null || authors.Count < 1)
-			{
-				throw new InvalidOperationException("Seed data failed to load");
-			}
-
-			dbContext.Authors.AddRange(authors);
-			dbContext.SaveChanges();
+			Debug.WriteLine("Database already seeded");
+			return;
 		}
+
+		Debug.WriteLine("Seeding Database");
+
+		var authors = await GetResourceData<List<Author>>("Seed.json");
+
+		if (authors is null || authors.Count < 1)
+		{
+			throw new InvalidOperationException("Seed data failed to load");
+		}
+
+		dbContext.Authors.AddRange(authors);
+		dbContext.SaveChanges();
 	}
 
 	private static bool MigrationsPending(BookshopDbContext bookshopDbContext)
