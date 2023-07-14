@@ -1,7 +1,7 @@
 using Bookshop.DAL;
 using Bookshop.DAL.Abstractions;
 
-namespace Bookshop.Services;
+namespace Bookshop.DAL.Providers;
 
 public class BookshopDbPathProvider : IFilePathProvider
 {

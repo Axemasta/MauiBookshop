@@ -2,6 +2,7 @@
 using Bookshop.DAL;
 using Bookshop.DAL.Abstractions;
 using Bookshop.DAL.Contexts;
+using Bookshop.DAL.Providers;
 using Bookshop.Extensions;
 using CommunityToolkit.Maui;
 using Microsoft.EntityFrameworkCore;

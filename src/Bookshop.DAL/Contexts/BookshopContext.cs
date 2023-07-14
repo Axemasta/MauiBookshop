@@ -6,6 +6,8 @@ public sealed class BookshopDbContext : DbContext, IBookshopDbContext
 
 	public DbSet<Book> Books { get; set; }
 
+	public DbSet<BigDog> BigDogs { get; set; }
+
 	public BookshopDbContext(DbContextOptions<BookshopDbContext> options)
 		: base(options)
 	{

@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+    <UseMaui>true</UseMaui>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,5 +21,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Bookshop.Domain\Bookshop.Domain.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.6.8686" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.6.8686" />
+	</ItemGroup>
 
 </Project>
