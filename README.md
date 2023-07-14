@@ -3,6 +3,8 @@ A little demo using EFCore to access sqlite in Maui.
 
 This app uses EFCore to manage a Sqlite database, there are database migrations and data seeding being used in this sample.
 
+> Checkout the `net8` branch to run this app targetting net 8 maui. 
+
 ## EFCore
 
 I've had a play around with the setup & architecture for EFCore and maui here. I'm on a solid 6/10 happiness with what I've got in this sample, some things like the initial database startup definitely need more work and consideration. I've also not really considered unit testability for this sample either. A big caviat is that the DAL project **CAN'T** reference Maui (`<UseMaui>true</UseMaui>) otherwise it breaks the EF CLI tooling.
@@ -20,7 +22,7 @@ dotnet tool install --global dotnet-ef
 ```
 - Run command:
 ```bash
- dotnet ef migrations add ExtraInformation --project src/Bookshop.DAL/Bookshop.DAL.csproj
+dotnet ef migrations add ExtraInformation --project src/Bookshop.DAL/Bookshop.DAL.csproj
 ```
 
 Migrations get added to the DAL project's `Migrations/` directory and are applied via the `SeedDatabase` app extension method (Called in the MauiProgram).
