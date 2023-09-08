@@ -1,20 +1,23 @@
 using Bookshop.Abstractions;
+using Bookshop.DAL.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bookshop.Services;
 
 public class AuthorService : IAuthorService
 {
-	private readonly IBookshopDbContext bookshopDbContext;
+	private readonly IDbContextFactory<BookshopDbContext> bookshopDbContextFactory;
 
-	public AuthorService(IBookshopDbContext bookshopDbContext)
+	public AuthorService(IDbContextFactory<BookshopDbContext> bookshopDbContextFactory)
 	{
-		this.bookshopDbContext = bookshopDbContext;
+		this.bookshopDbContextFactory = bookshopDbContextFactory;
 	}
 
 	public List<Author> GetAuthors()
 	{
-		return bookshopDbContext.Authors
+		using var dbContext = bookshopDbContextFactory.CreateDbContext();
+
+		return dbContext.Authors
 			.Include(a => a.Books)
 			.ToList();
 	}

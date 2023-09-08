@@ -28,7 +28,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<IFileSystem>(FileSystem.Current);
 		builder.Services.AddTransient<IFilePathProvider, BookshopDbPathProvider>();
 
-		builder.Services.AddDbContext<BookshopDbContext>((services, options) =>
+		builder.Services.AddDbContextFactory<BookshopDbContext>((services, options) =>
 		{
 			var dbProvider = services.GetRequiredService<IFilePathProvider>();
 			var dbPath = dbProvider.GetFilePath();
@@ -36,7 +36,6 @@ public static class MauiProgram
 		});
 
 		builder.Services.AddSingleton<IAuthorService, AuthorService>();
-		builder.Services.AddScoped<IBookshopDbContext, BookshopDbContext>();
 
 		builder.Services.AddTransient<AuthorsDetailViewModel>();
 		builder.Services.AddTransient<AuthorsDetailPage>();

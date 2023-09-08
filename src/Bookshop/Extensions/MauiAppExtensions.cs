@@ -9,7 +9,9 @@ public static class MauiAppExtensions
 	{
 		using var scope = mauiApp.Services.CreateScope();
 
-		var dbContext = scope.ServiceProvider.GetRequiredService<BookshopDbContext>();
+		var dbContextFactory = scope.ServiceProvider.GetRequiredService<IDbContextFactory<BookshopDbContext>>();
+
+		using var dbContext = dbContextFactory.CreateDbContext();
 
 		var pendingMigrations = MigrationsPending(dbContext);
 

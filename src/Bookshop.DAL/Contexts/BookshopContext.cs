@@ -1,6 +1,6 @@
 namespace Bookshop.DAL.Contexts;
 
-public sealed class BookshopDbContext : DbContext, IBookshopDbContext
+public sealed class BookshopDbContext : DbContext
 {
 	public DbSet<Author> Authors { get; set; }
 
