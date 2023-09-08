@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
@@ -43,6 +43,13 @@
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
+
+	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
+		<CreatePackage>false</CreatePackage>
+		<CodesignKey>Mac Developer</CodesignKey>
+		<PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+		<CodesignEntitlements>Platforms\MacCatalyst\Entitlements.plist</CodesignEntitlements>
+	</PropertyGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.MVVM" Version="8.2.0" />
